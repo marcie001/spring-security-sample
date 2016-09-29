@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- sec 名前空間の定義を追加 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8" />
+<title>USER 用ページ - Spring Security Sample</title>
+</head>
+<body>
+<!-- principal.name だと username にアクセスしてしまった。勘違いかもしれないが。 -->
+<h1>ようこそ、 <span sec:authentication="principal.fullname">Bob</span> サン。このページは ADMIN 及び USER のみ閲覧できます</h1>
+<ul>
+  <li sec:authorize="hasRole('ADMIN')"><a th:href="@{/admin}">ADMIN 用ページ</a></li>
+  <li sec:authorize="hasAnyRole('ADMIN', 'USER')"><a th:href="@{/user}">USER 用ページ</a></li>
+</ul>
+<form th:action="@{/logout}" method="POST">
+  <button type="submit">ログアウト</button>
+</form>
+</body>
+</html>

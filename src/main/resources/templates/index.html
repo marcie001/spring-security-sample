@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Spring Security Sample</title>
+</head>
+<body>
+<!-- th:action 属性を指定することで CSRF 対策コードが出力される -->
+<form th:action="@{/}" method="POST">
+  <div>
+    <label for="username">Account: </label>
+    <input id="username" type="text" name="username" required="required" />
+  </div>
+  <div>
+    <label for="password">Password: </label>
+    <input id="password" type="password" name="password" required="required" />
+  </div>
+  <div>
+    <button type="submit">ログイン</button>
+  </div>
+</form>
+</body>
+</html>
