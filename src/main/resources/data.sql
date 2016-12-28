@@ -1,2 +1,3 @@
 insert into users (id, fullname, account, password, role) select 1, 'John Admin', 'admin', '$2a$10$yj4kFr8XTPiuUO3/slQb7Oc52a5BaEfa5Y5phIGCc2i.7EG.WoyYq', 'ROLE_ADMIN' where not exists (select * from users where id = 1);
-insert into users (id, fullname, account, password, role) select 2, 'Jane User', 'user', '$2a$10$oxorFs804rqv7TE/SEioAew84vTwuMXozF6tBcJlOwzwm5.2SD23S', 'ROLE_USER' where not exists (select * from users where id = 2);
+insert into users (id, fullname, account, password, role) select 2, 'Jane User', 'user01', '$2a$10$oxorFs804rqv7TE/SEioAew84vTwuMXozF6tBcJlOwzwm5.2SD23S', 'ROLE_USER' where not exists (select * from users where id = 2);
+insert into users (id, fullname, account, password, role) select 3, 'Joe User', 'user02', '$2a$10$oxorFs804rqv7TE/SEioAew84vTwuMXozF6tBcJlOwzwm5.2SD23S', 'ROLE_USER' where not exists (select * from users where id = 3);

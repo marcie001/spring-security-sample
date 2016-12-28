@@ -16,5 +16,11 @@
 <form th:action="@{/logout}" method="POST">
   <button type="submit">ログアウト</button>
 </form>
+<ul th:each="article : ${articles}">
+  <li>
+    <span th:text="${article.title}"></span>
+    <span sec:authorize="hasPermission(#vars.get('article'), 'WRITE')"><a th:href="@{'/articles/' + ${article.id}}">詳細</a></span>
+  </li>
+</ul>
 </body>
 </html>
